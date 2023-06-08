@@ -1,0 +1,17 @@
+body{
+    --height-menu: 35px;
+    --width-button: 150px;
+}
+
+#home_icon{
+    display: block;
+}
+
+#home{
+    display:none;
+}
+
+
+#hamburger_menu{
+    display: none;
+}

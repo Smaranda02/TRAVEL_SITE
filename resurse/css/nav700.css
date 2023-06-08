@@ -1,0 +1,71 @@
+body{
+    --height-menu: 30px;
+    --width-button: 100%;
+}
+
+#hamburger{
+    display: block;
+    margin:0;
+}
+
+#hamburger>i{
+    height: var(--height-menu);
+    width:auto;
+    margin:0;
+    display: block;
+}
+
+ul.meniu{
+    display: none;
+}
+
+
+#home_link, #home_link ul li{
+    transition: none;
+    text-shadow: none;
+    text-decoration: none;
+}
+
+
+ul.meniu li{
+    transition: none;
+    text-shadow: none;
+}
+
+ul.meniu li:hover{
+    transition: none;
+    text-shadow: none;
+}
+
+
+#ch-menu:checked + ul.meniu{
+    display: block;
+    /*cu + selectez fratele imediat urmator de dupa ch-menu*/
+    animation-name: animatie_meniu;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation: animatie_meniu 0.5s ease-out forwards;
+    animation-iteration-count: 1;
+    transform-origin: center top;
+}
+
+
+@keyframes animatie_meniu {
+
+
+    0% {
+        /*transform: scale(0,1);*/
+        /*opacity: 0;*/
+        letter-spacing:-5px;
+    }
+    100% {
+        /*transform: scale(1,1);*/
+        /*opacity: 1;*/
+        letter-spacing: 1px;
+    }
+}
+
+
+#bars{
+    font-size: 25px;
+}

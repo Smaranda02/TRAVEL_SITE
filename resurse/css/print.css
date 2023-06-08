@@ -1,0 +1,94 @@
+footer {
+    page-break-before: always;
+}
+
+@page {
+    size: A4 portrait;
+}
+
+
+#grid_page{
+    box-sizing:border-box;
+    display: block;
+}
+
+#banner{
+    horiz-align: center;
+    text-align: center;
+    width: 80%;
+    border-style: dotted;
+    border-color: black;
+    position: absolute;  
+    margin-top: 55px;
+    top: 5px;
+}
+
+@page :left {
+    margin-right: 2.5cm;
+    margin-left: 0.5cm;
+    width: 100%;
+
+}
+
+
+@page :right{
+    margin-right: 0.5cm;
+    margin-left: 2.5cm;
+    height: 100%;
+}
+
+
+iframe{
+    display: none;
+}
+
+#top_link{
+    display: none;
+}
+
+img{
+    display: none;
+}
+
+
+ul.meniu{
+    position:static;
+    display: none;
+
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+figcaption{
+    display: none;
+}
+
+
+
+#watermark::after{
+    position: fixed; top: 0; right: 0;
+    user-select: none; /* Non-prefixed version for chorme, opera and*/
+    -ms-user-select: none; /* Internet Explorer, Edge */
+    -moz-user-select: none; /* Firefox */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    opacity: 0.65;
+    width: 100px;
+    height: 2cm;
+    border-style: double;
+    content: "Smaranda Andronic";
+}
+
+
+
+h1{
+    text-decoration-line: underline;
+    font-size: 5em;
+    page-break-after: always;
+    margin-top: 50%;
+    text-align: center;
+}

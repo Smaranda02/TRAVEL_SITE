@@ -1,0 +1,607 @@
+#header{
+    background-color: var(--header_color);
+    border-radius: 5px;
+    border: 2px solid white;
+    margin:0;
+    padding: 0;
+
+}
+
+
+#top{
+
+    overflow: hidden;
+    animation: animate_title 2s linear forwards;
+}
+
+
+@keyframes animate_title {
+    0% {
+        width: 0px;
+        height: 0px;
+    }
+    30% {
+        width: 50px;
+        height: 0px;
+    }
+    60% {
+        width: 200px;
+        height: 80px;
+    }
+}
+
+
+.iframe_links > a{
+    border: 3px groove ;
+    border-color: var(--highlight_color);
+    border-radius: 0 0 8px 8px;
+    color:black;
+    padding: 10px;
+    text-align: center;
+    background:white;
+    transition: all 100ms linear;
+}
+
+
+.iframe_links a:hover {
+    color:black;
+    background:var(--grid_background);
+}
+
+#logo{
+    vertical-align: sub;
+}
+
+
+@font-face {
+    font-family: stylish_font;
+    src: url(/resurse/Courgette-Regular.ttf);
+}
+
+#extern-font > q , #extern-font > blockquote{
+    font-family: stylish_font;
+}
+
+
+
+body{
+    --shadow: #97C5F5;
+    --text_color:black;
+    --grid_background : #96C5D6;
+    --main_color : #D8E4EB;
+    --highlight_color : #285FF5;
+    --cyan_blue : #42CAD6;
+    --bluer-blue:#229DF5;
+    --padding_grid : 15px;
+    --spacing: 30px;
+    --visited_link: #285FF5;
+    --header_color: #AEC9F5;
+    --menu_color: aqua;
+
+
+}
+
+body.dark{
+    --cyan_blue: gray;
+    --text_color:white;
+    --bluer-blue:  #192d3a;
+    --main_color :  #192d3a;
+    --shadow: gray;
+    --grid_background : black;
+    --highlight_color :  #192d3a;
+    --header_color: gray;
+    --menu_color: #095062;
+}
+
+body{
+    padding-left: var(--spacing);
+    padding-right: var(--spacing);
+    background-color: var(--main_color);
+    color:var(--text_color);
+    min-width:450px;
+    margin:0;
+}
+
+
+
+#container_iframe{
+    display: flex;
+    flex-direction: column;
+    max-width: 700px;
+}
+
+
+#video_iframe{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%;
+}
+
+
+#iframe{
+    border-style: groove;
+    border-color: var(--highlight_color);
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+}
+
+
+h1{
+    text-align: center;
+}
+
+h2{
+    font-size: 2rem;
+}
+
+
+main a:visited {
+    color : var(--visited_link);
+}
+
+main a:active{
+    border-style: solid;
+    border-width: thin;
+    border-color: black;
+}
+
+a[href^="http"]::before {
+    content: "⮳";
+    font-size: 2em;
+}
+
+
+a[href^="http"]:hover {
+    color:darkblue;
+}
+
+
+
+main a{
+    background-size: 0;
+       color: black;
+}
+
+main a:hover{
+        background-color: var(--highlight_color);
+        background-image: radial-gradient(circle,var(--highlight_color) 40%,  transparent 80%);
+        background: radial-gradient(circle, rgba(0, 0, 255, 1) 0%,rgba(0, 0, 255, 1) 40%, rgba(0, 0, 255, 0) 80%, rgba(0, 0, 255, 0) 100%);
+        background-position: center;
+        background-size: 100%;
+        transition: all 0.5s linear;
+}
+
+
+@keyframes captions_up {
+    from { top: 0;}
+    to{ bottom: 0;}
+}
+
+
+::cue{
+    bottom: 0;
+    background-color: transparent;
+    color: white;
+    text-shadow: 3px 2px black;
+    position: absolute;
+    animation: captions_up 2s;
+}
+
+
+
+#iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 95%;
+    height: 91%;
+    padding: 2.5%;
+    background-color: var(--bluer-blue);
+
+}
+
+
+.iframe_links{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+figure{
+    margin: 0;
+}
+
+#top_link {
+    position: fixed;
+    border: 2px solid var(--highlight_color);
+    padding: 2px;
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    rotate : 45deg;
+    float: right;
+    bottom: 20px;
+    left: 96%;
+    background-color: var(--main_color);
+    opacity: 0.5;
+    box-shadow: 10px 10px 10px var(--bluer-blue);
+    transition: opacity 300ms;
+    line-height: 50px;
+}
+
+
+.triangle {
+    width: 0;
+    height: 0;
+    background-color: transparent;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 25px solid var(--cyan_blue);
+    border-radius: 75%;
+    position: fixed;
+    right: 4px;
+    rotate:135deg;
+    line-height: 10;
+}
+
+.triangle:hover{
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 25px solid navy;
+}
+
+
+
+#top_link:hover, #top_link:active{
+    opacity: 1;
+    background-color: var(--bluer-blue);
+}
+
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+
+
+table,th,tr,td{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+
+th, td {
+    padding: 10px;
+}
+
+#caption_table {
+    caption-side: bottom;
+}
+
+
+
+#hamburger_menu{
+    display: none;
+}
+
+
+tbody>tr:nth-child(even) {
+    background-color: var(--cyan_blue);
+}
+
+tbody>tr:nth-child(odd) {
+    background-color: var(--bluer-blue);
+}
+
+
+tfoot{
+    background-color: var(--cyan_blue);
+}
+
+
+tbody>tr:hover {background-color: var(--highlight_color);
+    transition-duration: 300ms;
+
+}
+
+tfoot>tr:hover {background-color:var(--highlight_color) ;
+    transition-duration: 300ms;
+
+}
+
+#container_table {
+    overflow-x: visible;
+
+}
+
+
+#last_column{
+    background-color: var(--cyan_blue);
+}
+
+#avg_price{
+    background-color: var(--cyan_blue);
+}
+
+
+
+#grid_page{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    "z-presentation z-presentation z-presentation z-presentation"
+    "z-users z-data_stats z-data_stats z-site_server"
+    "z-calendar z-calendar z-table z-table"
+    "z-ad z-ad z-table z-table"
+    "z-other z-other z-other z-other";
+
+    padding: 10px;
+    overflow: auto;
+    background-color: var(--grid_background);
+    gap: 20px 10px;
+    box-shadow:  10px 10px 10px var(--shadow);
+    /*
+    grid-row-gap
+    grid-column-gap
+     */
+
+}
+
+
+
+#grid_page > * {
+    border-radius: 10px;
+    border: 3px solid black;
+    padding : var(--padding_grid);
+
+}
+
+#grid_page > div {
+    background-color: var(--main_color);
+}
+
+
+main > * {
+    border : 2px solid black;
+
+}
+
+footer {
+    background-color: var(--grid_background);
+    box-shadow:  10px 10px 10px var(--shadow);
+}
+
+#map, #mail, #tel{
+    color: black;
+}
+
+
+#presentation{
+    grid-area: z-presentation;
+}
+
+#users{
+    grid-area: z-users;
+
+}
+
+#data_stats{
+    grid-area: z-data_stats;
+}
+
+#calendar{
+    grid-area: z-calendar;
+}
+
+#site_server{
+    grid-area: z-site_server;
+}
+
+#ad{
+    grid-area: z-ad;
+    column-count: 3;
+    column-gap: 20px;
+    column-rule: 4px double black;
+}
+
+#other{
+    grid-area: z-other;
+
+}
+
+#table{
+    grid-area: z-table;
+    background-image: url("/resurse/imagini/sky.jpg");
+    background-size: cover;
+    filter:contrast(2) brightness(100%) grayscale(0);
+    transition:all 2s linear;
+
+}
+
+
+#table:after, #table:before{
+    content:" ";
+}
+
+#table:after{
+    background-color:rgb(255,0,0);
+    mix-blend-mode:lighten;
+}
+
+#table:before{
+    background-color:rgb(0,0,255);
+    mix-blend-mode: lighten;;
+}
+
+#table:hover{
+    filter: grayscale(100%);
+}
+
+
+
+#palace{
+    max-width: 100%;
+    height: auto;
+}
+
+#ceausescu{
+    max-width: 100%;
+    height: auto;
+   /* white-space: pre; */
+}
+
+#museum{
+    max-width: 100%;
+    height: auto;
+    height: 50%;
+    width: 50%;
+}
+
+address > a {
+    text-decoration:none;
+}
+
+
+
+#popular{
+    position:relative;
+}
+
+
+#text-reflectat{
+    position:absolute;
+    left:0;
+    top:100%;
+    transform-origin:0 0;
+    /*conetaza ordinea transformarilor!*/
+    transform: rotateX(180deg) skew(-35deg) scaleY(0.7) translate(7px,-19px);
+    opacity:0.55;
+    height: 32px;
+
+
+    background: repeating-linear-gradient(190deg,white ,black 2%, black 5%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 150% 150%;
+
+
+}
+
+
+
+#text-reflectat:hover, #popular:hover{
+    animation: animate-gradient 1s linear infinite;
+
+}
+
+
+
+@keyframes animate-gradient {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 0% 100%;
+    }
+}
+
+
+
+
+hr{
+    border: none;
+    height: 50px;
+    background:
+            radial-gradient(circle, white, blue, transparent 15px),
+            radial-gradient(circle at 65% 30% , blue, black, transparent 10px);
+    background-size: 40px;
+    border-radius: 20px;
+    opacity:0.5;
+    mask-image: radial-gradient(circle, black 50%, rgba(0, 0, 0, 0.5) );
+}
+
+
+
+#banner{
+    position: fixed;
+    bottom: 0;
+    margin-bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    background-color: #eaeaea;
+    text-align: center;
+    color: black;
+    background-color: gray;
+    animation: slideUp 3s;
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+        color: darkblue;
+    }
+    70% {
+        transform: translateY(-20px);
+        opacity: 1;
+        color: midnightblue;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+        color: black;
+    }
+}
+
+
+
+
+/*hr::before,*/
+/*hr::after {*/
+/*    content: "";*/
+/*    position: absolute;*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*    border-radius: 50%;*/
+/*}*/
+
+/*hr::before {*/
+/*    background-color: red;*/
+/*    width: 20px;*/
+/*    height: 20px;*/
+/*}*/
+
+/*hr::after {*/
+/*    overflow: visible;*/
+/*    background-color: blue;*/
+/*    width: 15px;*/
+/*    height: 15px;*/
+/*    transform: translate(100%, -50%);*/
+/*}*/
+
+
+
+
+/*in relatie parinte fiu daca punem z-index la ambele mereu copilul va fi deasupra parintelui
+pentru a pune z-index trebuie sa nu avem position static*/
+
+/*position absolute pozitioneaza elementu in functie de pirmul stramos cu pozitie nestatica iar position relative fata de porpria lui caseta*/
+
+
+/*position sticky face una dintre atributele top left right sa se aplica ca distanta minima care mereu se va respecta pana cand elementul parinte dispare*/
+
+
+/*CURS*/
+
+main{
+    margin-top: 100px;
+}

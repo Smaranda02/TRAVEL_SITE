@@ -1,0 +1,47 @@
+body{
+    --spacing: 20px;
+    --padding_grid :13px;
+}
+
+
+#home{
+    visibility: hidden;
+}
+
+#grid_page{
+    display: block;
+    margin: auto;
+    grid-row-gap : 15px;
+    padding-left: 10px;
+}
+
+
+#grid_page > *{
+    margin-bottom: 10px;
+}
+
+
+
+#top{
+    animation-duration: 0s;
+}
+
+h1{
+    transition-duration: 300ms ;
+    font-size: 1.875em;
+}
+
+
+h2{
+    transition-duration: 300ms ;
+    font-size: 1.375em;
+}
+
+h3{
+    transition-duration: 300ms ;
+    font-size: 1.175em;
+}
+
+/*
+cum fac pt toate fonturile
+ */

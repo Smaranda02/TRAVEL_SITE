@@ -1,0 +1,14 @@
+@media screen and (max-width: 700px) {
+    #text_filter,#text_reset,#text_sort_up,#text_sort_down {
+        display: none;
+    }
+
+    #containerPhotoTable{
+        display: block;
+    }
+
+    .prod-table{
+        margin-top: auto;
+    }
+
+}

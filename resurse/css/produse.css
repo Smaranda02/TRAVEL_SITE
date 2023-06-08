@@ -1,0 +1,79 @@
+
+
+.prod-table{
+    /*border-style: solid;*/
+    /*border-color: black;*/
+    width: 33%;
+    padding-left: 33%;
+    /*padding-right: 30%;*/
+    padding-top: 20px;
+    /*padding-bottom: 100px;*/
+    left: 10px;
+    margin-top: -250px;
+    align-content: center;
+
+}
+
+.col{
+    border-right: 1px solid gray;
+    border-left: 1px solid gray;
+}
+
+.row {
+    border-top: solid 1px gray;
+    border-bottom: solid 1px gray;
+}
+
+#containerPhotoTable{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+#no-result{
+    display: none;
+}
+
+.form-check form-switch{
+    border-style: none;
+
+}
+
+
+#container_buttons{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+/*button{*/
+/*    margin-left: 10px;*/
+/*    margin-right: 10px;*/
+/*}*/
+
+#photoProduse{
+    margin-left: var(--spacing);
+}
+
+label{
+    margin-left: 5px;
+}
+
+#produse{
+    padding: var(--padding_grid);
+}
+
+/*produse.css sa fie dupa bootstrap*/
+.c1{
+    width:120px;
+}
+
+.accordion{
+    width: 40%;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.stay.pressed{
+    background-color: red;
+}

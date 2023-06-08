@@ -1,0 +1,36 @@
+body{
+    --spacing: 10px;
+}
+
+#grid_page{
+    display: block;
+    margin: auto;
+    grid-row-gap: 10px;
+
+}
+
+
+#grid_page > *{
+    margin-bottom: 10px;
+    padding : var(--padding_grid);
+
+}
+
+#top{
+    animation-duration: 0s;
+}
+
+h1{
+    transition-duration: 300ms ;
+    font-size: 1.75em;
+}
+
+h2{
+    transition-duration: 300ms ;
+    font-size: 1.2em;
+}
+
+h3{
+    transition-duration: 300ms ;
+    font-size: 1em;
+}

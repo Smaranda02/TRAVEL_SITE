@@ -1,0 +1,90 @@
+{
+	"cale_galerie":"resurse/imagini/galerie_statica",
+	"imagini": [
+		{
+			"cale_relativa":"acuarela.png",
+			"nume":"Acuarela cafenea",
+			"descriere":"Acuarela cafenea Bucuresti",
+			"timp": "dimineata"
+		},
+		{
+			"cale_relativa":"astrodom-terasa.jpg",
+			"nume":"Terasa Astrodom",
+			"descriere":"Terasa Astrodom",
+			"timp": "noapte"
+		},
+		{
+			"cale_relativa":"Bran-Castle.jpg",
+			"nume":"Castelul Bran",
+			"descriere":"Cel mai frumos din Romania",
+			"timp": "zi"
+		},
+		{
+			"cale_relativa":"brasov.jpg",
+			"nume":"Orasul Brasov",
+			"descriere":"Centrul vechi",
+			"timp": "zi"
+		},
+		{
+			"cale_relativa":"control.jpg",
+			"nume":"Club Control Bucuresti",
+			"descriere":"Foarte frumos in Control",
+			"timp": "noapte"
+		},
+		{
+			"cale_relativa":"delta.jpg",
+			"nume":"Delta Dunarii",
+			"descriere":"Natura",
+			"timp": "zi"
+		},
+		{
+			"cale_relativa":"Herastrau.jpg",
+			"nume":"Parc Herastrau Bucuresti",
+			"descriere":"Lacuri, lebede",
+			"timp": "dimineata"
+		},
+		{
+			"cale_relativa":"infinitea.jpg",
+			"nume":"Ceainarie Infinitea",
+			"descriere":"Locatie minunata",
+			"timp": "dimineata"
+		},
+		{
+			"cale_relativa":"peles.jpg",
+			"nume":"Castel Peles",
+			"descriere":"Castel Peles",
+			"timp": "zi"
+		},
+		{
+			"cale_relativa":"Sapanta.jpg",
+			"nume":"Cimitirul Sapanta",
+			"descriere":"Cimitirul vesel",
+			"timp": "zi"
+		},
+		{
+			"cale_relativa":"Sarmisegetuza.jpg",
+			"nume":"Sarmisegetuza Regia",
+			"descriere":"Loc istoric",
+			"timp": "zi"
+		},
+		{
+			"cale_relativa":"sighisoara.jpg",
+			"nume":"Orasul Sighisoara",
+			"descriere":"Oras medieval",
+			"timp": "zi"
+		},
+		{
+			"cale_relativa":"Stavropoleos_Monastery.jpg",
+			"nume":"Manastirea Stavropoleos Bucuresti",
+			"descriere":"Manastire",
+			"timp": "dimineata"
+		},
+		{
+			"cale_relativa":"tnb.jpg",
+			"nume":"Teatrul National Bucuresti",
+			"descriere":"Cel mai impozant teatru din Romania",
+			"timp": "noapte"
+		}
+
+	]
+}

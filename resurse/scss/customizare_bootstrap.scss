@@ -1,0 +1,30 @@
+@use '../../node_modules/bootstrap/scss/bootstrap.scss' with
+(
+    $primary:#AEC9F5,
+    $secondary:#96C5D6,
+    $h1-font-size: 32px,
+    $h2-font-size: 24px,
+    $h3-font-size: 21px,
+    $link-hover-color: #285FF5,
+    $container-max-widths : (
+      sm: 500px,
+      md: 700px,
+      lg: 1000px,
+    ),
+    $font-family-sans-serif : Arial,
+    $border-radius: 5px,
+
+
+    $form-range-track-cursor:         pointer,
+    $form-range-track-bg:             blue,
+    $form-range-thumb-active-bg:               blue,
+    $form-range-thumb-bg:                       aqua,
+    $form-range-thumb-width:                   1.5rem,
+    $form-range-thumb-focus-box-shadow: black,
+);
+
+*,*::before,*::after{
+  box-sizing: unset;
+}
+
+
