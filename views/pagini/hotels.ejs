@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>WANDERWORLD</title>
+    <meta name="keywords" content="flight, booking, hotel, restaurant, price, holiday, vacation, ticket, city, country, tour, tour guide, museum,destination">
+    <meta name="description" content="Wanderworld will help you plan your dream holiday offering a wide range of options for your flight, hotel or just a tourist guide for main landmarks around the world"><!-- descrierea paginii, adesea apare sub link când sunt afișate rezultatele căutării -->
+
+
+
+    <%- include("../fragmente/head.ejs") %>
+    <link rel="stylesheet" href="/resurse/css/produse.css" type="text/css" />
+    <link rel="stylesheet" href="/resurse/css/produse700.css" type="text/css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+
+<!--    <script type="text/javascript" src=/node_modules/bootstrap/dist/js/bootstrap.js></script>-->
+<!--    <script type="text/javascript" src=/node_modules/@popperjs/core/dist/umd/popper.js ></script>-->
+
+    <script type="text/javascript" src=/resurse/js/produse.js></script>
+
+
+
+
+
+
+
+</head>
+
+<body>
+<%- include("../fragmente/header.ejs") %>
+
+
+<main>
+
+    <div id="container_buttons">
+
+    <label> Hotel Name: <input type="text" id="inp-nume"></label>
+    <!--<label> Maxim calorii: <input type="number" id="inp-calorii" value="10000"></label>-->
+
+        <button  type="button" id="filtrare" class="btn btn-secondary" data-bs-toggle="button" autocomplete="off"><span id="text_filter">Filter</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-funnel-fill" viewBox="0 0 16 16">
+                <path d="M1.5 1.5A.5.5 0 0 1 2 1h12a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.128.334L10 8.692V13.5a.5.5 0 0 1-.342.474l-3 1A.5.5 0 0 1 6 14.5V8.692L1.628 3.834A.5.5 0 0 1 1.5 3.5v-2z"/>
+            </svg>
+        </button>
+
+
+        <button id="resetare" class="btn btn-outline-secondary"><span id="text_reset">Reset</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-counterclockwise" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2v1z"/>
+                <path d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466z"/>
+            </svg>
+        </button><br/>
+
+
+        <button id="sortCrescNume" class="btn btn-secondary"><span id="text_sort_up">Sort ascending by name</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+            </svg>
+        </button>
+
+        <button id="sortDescrescNume" class="btn btn-secondary"><span id="text_sort_down">Sort descending by name</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+            </svg>
+        </button>
+
+
+        <button id="calcul" class="btn btn-secondary"><i class="bi bi-cart-check-fill"></i>Minimum price</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-check-fill" viewBox="0 0 16 16">
+                <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-1.646-7.646-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L8 8.293l2.646-2.647a.5.5 0 0 1 .708.708z"/>
+            </svg>
+        </button>
+
+
+        <button id="free_cancel" class="btn btn-outline-secondary" >
+            <input id="inp-checkbox" type="checkbox" class="select-cos"  autocomplete="off">
+            <span id="text_checkbox">Free cancelling</span>
+        </button>
+
+
+    </div>
+
+
+<!--        <div> Food type:&lt;!&ndash; trebuie sa aiba acelasi name ca sa formeze un grup &ndash;&gt;-->
+<!--        <p><label>No food included-->
+<!--                <input id="i_rad1"  name="gr_rad" value="no food" type="radio"/>-->
+<!--            </label></p>-->
+<!--        <p><label>Breakfast only-->
+<!--                <input id="i_rad2"  name="gr_rad" value="breakfast only" type="radio"/>-->
+<!--            </label>-->
+<!--        <p><label>Breakfast and dinner-->
+<!--                <input id="i_rad3" name="gr_rad" value="breakfast and dinner" type="radio"/>-->
+<!--            </label>-->
+<!--        <p><label>All inclusive-->
+<!--                <input id="i_rad4" name="gr_rad" value="all inclusive" type="radio"/>-->
+<!--            </label>-->
+<!--        <p><label>All-->
+<!--                <input id="i_rad5" checked name="gr_rad" value="all" type="radio"/>-->
+<!--            </label>-->
+<!--    </div>-->
+
+
+    <div> Kilometers from center:<!-- trebuie sa aiba acelasi name ca sa formeze un grup -->
+        <p><label>In the centre : 0-2 km
+                <input id="i_rad1"  name="gr_rad" value="0:2" type="radio"/>
+            </label></p>
+        <p><label>Near the centre : 2-4 km
+                <input id="i_rad2"  name="gr_rad" value="2:4" type="radio"/>
+            </label>
+        <p><label>Pretty far from the center : 4-7 km
+                <input id="i_rad3" name="gr_rad" value="4:7" type="radio"/>
+            </label>
+        <p><label>In the periphery: 7-15 km
+                <input id="i_rad4" name="gr_rad" value="7:1000" type="radio"/>
+            </label>
+        <p><label>All
+                <input id="i_rad5" checked name="gr_rad" value="all" type="radio"/>
+            </label>
+    </div>
+
+
+    <label> Minimum price:<span class="min">(0)</span><input type="range"  class="form-range c1" id="inp-pret-min" value="0" min="0"  max="20" >
+        <span class="max">(20)</span> <span id="infoRange1">(0)</span></label>
+
+    <label> Maximum price: <span class="min">(20)</span> <input type="range" class="form-range c1" id="inp-pret-max" value="20" min="20"  max="60" >
+        <span class="max">(60)</span> <span id="infoRange2">(0)</span></label>
+
+
+    <label>Select your home type:
+        <select id="inp-categorie">
+            <option id="sel-toate" selected value="all">all</option>
+            <% for (let opt of locals.optiuni) { %>
+                <option value="<%- opt.unnest %>"><%- opt.unnest %> </option>
+            <% } %>
+        </select>
+    </label>
+
+    <br>
+
+    <form class="form-floating">
+        <p><label >Type the name of the hotel you are looking for:</label>
+            <input  class="form-control" id="floatingInputValue" placeholder="Admiral"  style="height: 30px; width: 25%"></p>
+    </form>
+
+
+<!--    <label>Introduce keywords you want to find in the description of your hotel: <textarea class="form-control" id="exampleFormControlTextarea1"  style="height: 50px"></textarea> </label>-->
+
+
+
+    <p id="p-suma">Apăsați Alt+"c" pentru suma preturilor produselor afișate. </p>
+
+
+
+    <label>Multiple select:
+        <select id="inp-categ-food" multiple >
+            <option id="sel-all" selected value="all">all</option>
+            <% for (let opt of locals.optiuni_food) { %>
+                <option value="<%- opt.unnest %>"><%- opt.unnest %> </option>
+            <% } %>
+        </select>
+    </label>
+
+    <!-- Button trigger modal -->
+<!--    <button id="trigger" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">-->
+<!--        Launch demo modal-->
+<!--    </button>-->
+
+
+    <div id="exampleModalLive" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLiveLabel" style="display: none;" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLiveLabel">Are you sure you want to reset filters</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Resetting the filters will bring you back to the initial state of this page</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary">Confirm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <section id="produse">
+        <h2>Produse</h2>
+        <p id="no-result">Unfortunately, we have no results based on your filtration</p>
+
+        <div class="grid-produse">
+            <%
+                let nr=1;
+            for( let prod of locals.produse) {
+            %>
+
+            <article class="produs" >
+                <h3 class="nume">Name: <a href="/hotel/<%-prod.id %>" ><span class="val-nume"><%- prod.name%></span></a></h3>
+
+                <span class="val-food"  style="display: none"><%- prod.food%></span>
+                <span class="val-km"  style="display: none"><%- prod.km%></span>
+                <span class="val-id"  style="display: none"><%- prod.id%></span>
+
+
+                <div class="info-prod">
+                    <p class="categorie">Accomodation type:<span class="val-categorie"><%- prod.home_type%></span></p>
+                    <p class="descriere">Description:<span class="val-descriere"><%- prod.description%></span></p>
+
+
+                    <div id="containerPhotoTable">
+
+                        <div>
+                            <figure id="photoProduse">
+                                <a href="/produs/<%-prod.id %>" ><img src="/resurse/imagini/hotels/<%- prod.image %>"  alt="[imagine <%- prod.nume %>]" /></a>
+                                <!--                                                                  style="width:50%;height:auto;" -->
+                            </figure>
+                        </div>
+
+
+                        <div class="prod-table">
+
+                            <div class="row">
+                                <div class="col"> <p class="pret">Price: </p></div>
+                                <div class="col pt-2"><span class="val-pret"><%- prod.price%></span></div>
+
+                            </div>
+
+                            <div class="row">
+                                <div class="col"><p class="location">Location: </p></div>
+                                <div class="col"><span class="val-location"><%- prod.location%></span></div>
+
+                            </div>
+
+                            <div class="row">
+                                <div class="col"><p class="facilities">Facilities:  </p></div>
+                                <div class="col"> <span class="val-facilities"><%- prod.facilities%></span></div>
+
+                            </div>
+
+                            <div class="row">
+                                <%d=prod.add_time
+                                    var month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+                                    var name = month[d.getMonth()-1];
+                                %>
+                                <div class="col"> <p class="data">Date: </p></div>
+                                <div class="col"> <time datetime="<%d%>" class="val-data"><%- d.getDay()%>/<%-name%>/<%-d.getFullYear()%>(<%-d.toLocaleString('default', {weekday: 'long'})%>)</time></div>
+
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col"><p class="free_cancel">Free cancelling:  </p></div>
+                                <div class="col"> <span class="val-free-cancel"><%- prod.free_cancelling%></span></div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <label class="selecteaza-cos">
+                    Selectează:<br/>
+                    <input type="checkbox" class="select-cos" value="<%-prod.id %>" autocomplete="off">
+                </label>
+
+                <button class="erase" id="erase<%=nr%>" title="The product won't be displayed">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z"/>
+                    <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z"/>
+                </svg>
+                </button>
+
+                <button class="stay" id="stay<%=nr%>" title="This product will stay on page">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-sticky-fill" viewBox="0 0 16 16">
+                        <path d="M2.5 1A1.5 1.5 0 0 0 1 2.5v11A1.5 1.5 0 0 0 2.5 15h6.086a1.5 1.5 0 0 0 1.06-.44l4.915-4.914A1.5 1.5 0 0 0 15 8.586V2.5A1.5 1.5 0 0 0 13.5 1h-11zm6 8.5a1 1 0 0 1 1-1h4.396a.25.25 0 0 1 .177.427l-5.146 5.146a.25.25 0 0 1-.427-.177V9.5z"/>
+                    </svg>
+                </button>
+
+
+                    <div class="accordion " id="accordionSection<%=nr%>">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button type="button" class="accordion-button" data-bs-toggle="collapse" data-bs-target="#collapse<%=nr%>"  aria-expanded="false">More information about the property</button></h2>
+                            <div class="accordion-collapse collapse " id="collapse<%=nr%>" data-bs-parent="#accordionSection<%=nr%>">
+                                <div class="accordion-body">
+                                    For more details about the availability or the facilities of our property contact us on <%- prod.name%>@gmail.com
+                                    or directly on the phone number 0745678910
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+            </article>
+            <%  nr+=1 }%>
+        </div>
+    </section>
+
+
+
+</main>
+
+<%- include("../fragmente/footer") %>
+</body>
+</html>

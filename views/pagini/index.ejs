@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>WANDERWORLD</title>
+    <meta name="keywords" content="flight, booking, hotel, restaurant, price, holiday, vacation, ticket, city, country, tour, tour guide, museum,destination">
+    <meta name="description" content="Wanderworld will help you plan your dream holiday offering a wide range of options for your flight, hotel or just a tourist guide for main landmarks around the world"><!-- descrierea paginii, adesea apare sub link când sunt afișate rezultatele căutării -->
+
+
+    <%- include("../fragmente/head.ejs") %>
+    <link rel="stylesheet" href="/resurse/css/calendar.css" type="text/css" >
+
+
+</head>
+
+<body>
+<%- include("../fragmente/header.ejs") %>
+
+<main>
+
+    <!-- verif daca user e setat-->
+    <!--utiliz logat va fi transmis in locals si toate paginile vor sti cine e user logat -->
+    <% if(!locals.utilizator) { %>  <!--acest if verifica daca userul nu este logat pt a i afisa formularul-->
+        <form id="form_inreg"  method="post" class="date"  action="/login"  enctype="multipart/form-data">
+            <p>
+                <label>
+                    Username: <input type="text" name="username" id="inp-username" value="" required>
+                </label>
+            </p>
+            <p>
+                <label>
+                    Parola: <input id="parl" type="password" required  name="parola" value="">
+                </label>
+            </p>
+            <p><input type="submit" value="Logare"></p>
+        </form>
+        <p><%- locals.mesajLogin %></p>
+    <% }
+    else {
+         locals.succesLogin
+    %>
+
+    <div>
+        Bine ai venit,<%- locals.utilizator.username%> !
+        <img src="./poze_uploadate/admin2/background.jpg" alt="image" title="userPhoto">
+
+        <%- locals.utilizator.poza%>
+
+        <p>
+            Online users :
+        </p>
+
+    </div>
+
+    <% }  %>
+
+
+
+    <div id="grid_page">
+        <section id="presentation">
+            <h2 id="popular"> Explore the most popular destinations
+                <span id="text-reflectat"> Explore the most popular destinations</span>
+            </h2>
+            
+            <p>
+                Ip-ul dumneavostra este: <%- locals.ip %>
+            </p>
+
+            <p>
+                Suma <%- locals.a+locals.b %>
+            </p>
+
+
+<!--            <p>-->
+<!--                lastPage=getCookie("lastPage");-->
+<!--                Last accessed page is lastPage-->
+<!--            </p>-->
+
+            <figure>
+                <picture id="popular_img">
+                    <source media="(max-width: 600px)" srcset="./resurse/imagini/dubai_small.jpg">
+                    <source media="(max-width: 1000px)" srcset="./resurse/imagini/dubai_half.jpg">
+                    <source media="(max-width: 2000px)" srcset="./resurse/imagini/Dubai.jpg">
+                    <img src="./resurse/imagini/Dubai.jpg" alt="imagine" title="Dubai">
+                </picture>
+                <figcaption><span style="font-weight: bold;">Dubai is our <i>#1</i> destination</span></figcaption>
+            </figure>
+
+            <p><b>Don't forget to check out </b><a href="https://open.spotify.com/show/1cr36qpV0I4r1LZCS2DCb8?si=a_e_Xj1tSvy-e4X_vnBUvQ&nd=1" target="_blank">these stories</a> told by a real adventurer if you want to find out more unique places and fascinating experiences
+            </p> <!--tagul p nu permite taguri de tip block in interior; nu poti sa pui figure, h, etc in interiorului unui paragaf -> solutie: inchidem tagul inainte de figure si il deschidem dupa-->
+
+            <section id="near">
+                <h3>Near you</h3>
+
+                <p style="font-weight:bold;">You shouldn't miss trying these experiences <span><i class="fa-solid fa-arrow-down fa-flip"></i></span>
+                </p>
+
+
+                <ol>
+                    <li>Palace of the Parliament<br>
+                        <img id="palace" src="./resurse/imagini/peoples-house-g04332db42_640.jpg" alt="image" title="peoplesHouse">
+                    </li>
+                    <li>Nicolae Ceausescu's residence<br>
+                        <img id="ceausescu" src="./resurse/imagini/Casa-Ceausescu-Primaverii.jpg" alt="image" title="ceausescu">
+                    </li>
+                    <li>National Art Museum<br>
+                        <img id="museum" src="./resurse/imagini/muzeul_national.jpg" alt="image" title="museum">
+                    </li>
+                </ol>
+            </section>
+
+            <section>
+                <h3>Today's photo</h3>
+                <p><!--For more travel ideas check out these stories from trip addicts-->Every day we prepare you a <a href="./resurse/imagini/phuket-thailand-beach.jpeg" download="surprise.jpeg" id="gradient"> secret surpise photo</a> from an exotic location for you to inspire from </p>
+            </section>
+
+        </section>
+
+
+        <div id="data_stats">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+
+
+        <div id="users">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+
+
+        <div id="site_server">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+
+
+        <div id="calendar">
+
+                <div>L</div>
+                <div>Ma</div>
+                <div>Mi</div>
+                <div>J</div>
+                <div>V</div>
+                <div>S</div>
+                <div>D</div>
+                <%
+                nrZile=[31,28,31,30,31,30,31,31,30,31,30,31];
+
+                d=new Date(); //observatie: este data serverului nu a clinetului; codul ejs fiind compilat pe server
+                anCurent=d.getFullYear();
+                lunaCurenta=d.getMonth();
+                if(anCurent%400==0 || (anCurent%4==0 && anCurent%100!=0)) nrZile=29;
+                let nrZileCalendar=nrZile[lunaCurenta]
+                primaZiLuna=new Date(anCurent, lunaCurenta, 1);
+                ultimaZiLuna=new Date(anCurent, lunaCurenta, nrZileCalendar);
+                ziSaptPrimaZiLuna=(primaZiLuna.getDay()-1+7)%7;
+                ziSaptUltimaZiLuna=(ultimaZiLuna.getDay()-1+7)%7;
+                for (let i=0;i<ziSaptPrimaZiLuna;i++){
+                %>
+                    <div></div>
+                <% }
+
+
+                for (let i=1;i<=nrZileCalendar;i++){
+                    var obiectEvenimente=null;
+                    if(locals.evenimente)
+                        obiectEvenimente=locals.evenimente.find(function(elem){ return elem.data.valueOf()==new Date(anCurent,lunaCurenta,i).valueOf()})
+                if(obiectEvenimente)
+                {
+                %>
+                    <div class="zi eveniment" title="<%= obiectEvenimente.text %>"><%= i %></div>
+                <%
+                }
+                else{
+                %>
+                    <div class="zi"><%= i %></div>
+                <% }
+                } %>
+            <%
+            dataServer=new Date();
+            sirData=dataServer.getHours()+":"+dataServer.getMinutes()+":"+dataServer.getSeconds()
+
+            %>
+            <p>Pe localhost vor fi identice; se va observa diferența pe Heroku</p>
+            <p>Ora server:<span id="data_server"><%= sirData %></span></p>
+            <p>Ora client:<span id="data_client"></span></p>
+            <script>
+                function zero(nr){
+                    if (nr<10) return "0"+nr;
+                    return nr;
+                }
+
+                d=new Date()
+                document.getElementById("data_client").innerHTML=zero(d.getHours())+":"+zero(d.getMinutes())+":"+zero(d.getSeconds());
+
+                function actualizeazaElemData(id_div){
+                    var data_div=document.getElementById(id_div);
+                    if (data_div.innerHTML!="")
+                    {
+                        var timp=data_div.innerHTML.split(":")
+                        var dt=new Date(2000,1,15, timp[0],timp[1], timp[2] );//nu conteaza data (am pus valori random pentru an, luna si zi) ci timpul
+                    }
+                    else
+                        var dt=new Date();
+                    dt.setSeconds(dt.getSeconds()+1)
+                    data_div.innerHTML=zero(dt.getHours())+":"+zero(dt.getMinutes())+":"+zero(dt.getSeconds());
+                }
+                function actualizeazaData(){
+                    actualizeazaElemData("data_client");
+                    actualizeazaElemData("data_server");
+                }
+                actualizeazaData()
+                setInterval(actualizeazaData,1000)
+            </script>
+            <p>Locatie (acum e pentru un ip oarecare hardcodat in index.js - trebuie pus pe heroku ca sa mearga): <%= locals.locatie %></p>
+
+        </div>
+
+
+        <div id="ad">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+
+
+        <section  id="table">
+            <h2 id="best">Best offers</h2>
+            <p>Here I will insert a slide show of photos representing images from places which have the cheapest offers</p>
+            <!--Adaug link catre mai multe povesti de pe bloguri si sa se descarce in bloc-->
+
+            <h3>Best low-cost cities based on countries</h3>
+            <div id="container_table">
+                <table>
+                    <caption id="caption_table">Cities of the year 2023</caption>
+
+                    <thead>
+                    <tr>
+                        <th>Italy</th>
+                        <th>Czech Republic</th>
+                        <th>Greece</th>
+                        <th>Poland</th>
+                        <th>Average Price / Day</th>
+
+                    </tr>
+                    </thead>
+
+                    <tbody>
+
+                    <tr>
+                        <td>Bologna</td>
+                        <td>Prague</td>
+                        <td>Rhodos</td>
+                        <td>Warsaw</td>
+                        <td id="avg_price" rowspan="3">$50</td>
+
+                    </tr>
+
+                    <tr>
+                        <td>Padova</td>
+                        <td>Český Krumlov</td>
+                        <td>Creta</td>
+                        <td>Krakow</td>
+                    </tr>
+
+                    <tr>
+                        <td>Bari</td>
+                        <td>Karlovy Fluctuate</td>
+                        <td>Thessaloniki</td>
+                        <td>Gdansk</td>
+                    </tr>
+
+                    </tbody>
+
+                    <tfoot>
+                    <tr>
+                        <td>Piedmont</td>
+                        <td>Brno</td>
+                        <td>Corfu</td>
+                        <td>Wroclaw</td>
+                        <td id="last_column"></td>
+                    </tr>
+                    </tfoot>
+
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <div id="other">
+            <section id="us">
+                <h2>More about us</h2>
+                <ul>
+                    <li>More than <s>5000</s> <ins style="text-decoration: none;"><b> 10000</b> </ins>people opt for our services</li>
+                    <li>We give trustworthy holiday solutions since 2010</li>
+                </ul>
+
+
+                <video poster="/resurse/imagini/flightTips.jpg"  preload="none" controls>
+                    <source src="/resurse/videos/FLYING%20in%202023%20_%2010%20FLIGHT%20TIPS%20to%20know%20BEFORE%20you%20fly.mp4" type="video/mp4">
+                    <source src="/resurse/videos/FLYING-in-2023-_-10-FLIGHT-TIPS-to-know-BEFORE-you-fly.mpeg" type="video/mpeg">
+                    <track  src="/resurse/videos/%5BSubtitleTools.com%5D%20%5BEnglish%20(auto-generated)%5D%20FLYING%20in%202023%20_%2010%20FLIGHT%20TIPS%20to%20know%20BEFORE%20you%20fly%20%5BDownSub.com%5D.vtt" kind="subtitles" srclang="en" label="English" >
+                    <track  src="/resurse/videos/%5BSubtitleTools.com%5D%20%5BRomanian%5D%20FLYING%20in%202023%20_%2010%20FLIGHT%20TIPS%20to%20know%20BEFORE%20you%20fly%20%5BDownSub.com%5D.vtt" kind="subtitles" srclang="ro" label="Romanian"  default>
+
+                </video>
+
+                <div id="container_iframe">
+
+                    <div id="video_iframe">
+                        <iframe id="iframe" name="ifr-video"  src="https://www.youtube.com/embed/Xj4E0Zry6K4"
+                                title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen></iframe>
+                    </div>
+
+                    <div class="iframe_links">
+
+                        <a  href="https://www.youtube.com/embed/Xj4E0Zry6K4" target="ifr-video" style="text-decoration:none">Your dreams, our goals</a>
+                        <a  href="https://www.youtube.com/embed/k4mumEYdz0s" target="ifr-video" style="text-decoration:none">By your side, around the world</a>
+                        <br>
+
+
+                    </div>
+                </div>
+
+            </section>
+
+            <div id="feedback">
+                <article>
+                    <h3>Impressions from our clients : </h3>
+                    <div id="extern-font">
+                        <q>I'm very glad I opted for WanderWorld's services  &#128512; </q> <br>
+                        <q>With the help of WanderWorld I could plan my whole vacation from scratch in just one place &#128513;</q>
+                        <p>Reputable sites mentioning us : </p>
+                        <blockquote cite="https://fmi.unibuc.ro/">
+                            From hotels to travel guides, flights, various impressions and pieces of advice <abbr title="etcetera">etc</abbr>. With WanderWorld say <i>au revoir</i> to monotony and hello to your desired lifestyle!
+                        </blockquote>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div> <!--inchide div grid-pagina-->
+
+
+</main>
+
+<%- include("../fragmente/galerie_statica.ejs")%>
+
+
+<hr>
+
+
+<%- include("../fragmente/footer.ejs") %>
+
+
+</body>
+</html>
+
+
+
+<!--https://faq.whatsapp.com/5913398998672934/?helpref=hc_fnav&locale=en_US
+https://developers.google.com/maps/documentation/javascript/adding-a-google-map
+-->

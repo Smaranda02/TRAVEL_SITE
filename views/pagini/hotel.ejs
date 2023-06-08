@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>WANDERWORLD</title>
+    <meta name="keywords" content="flight, booking, hotel, restaurant, price, holiday, vacation, ticket, city, country, tour, tour guide, museum,destination">
+    <meta name="description" content="Wanderworld will help you plan your dream holiday offering a wide range of options for your flight, hotel or just a tourist guide for main landmarks around the world"><!-- descrierea paginii, adesea apare sub link când sunt afișate rezultatele căutării -->
+    <link rel="stylesheet" href="/resurse/css/hotels.css" type="text/css" />
+
+    <%- include("../fragmente/head.ejs") %>
+    <script type="text/javascript" src=/resurse/js/produse.js></script>
+
+
+</head>
+
+<body>
+<%- include("../fragmente/header.ejs") %>
+
+<main>
+    <section>
+        <h2>More details about your selection</h2>
+        <article id="art-produs">
+            <h3><span class="nume">Name of your accomodation : <%- locals.prod.name %></span></h3>
+            <p>Accomodation type: <span class="categorie"><%- locals.prod.home_type%></span></p>
+            <p>Price: <span class="pret"><%- locals.prod.price %> </span></p>
+            <p>Food type: <span class="food"><%- locals.prod.food %> </span></p>
+            <p>Confort: <span class="confort"><%- locals.prod.confort %> stars</span></p>
+            <p>Facilities: <span class="facilities"><%- locals.prod.facilities %> </span></p>
+            <p>Free cancelling: <span class="free_cancel"><%- locals.prod.free_cancelling %> </span></p>
+            <p>Description: <span class="descriere"><%- locals.prod.description %> </span></p>
+            <p>Location: <span class="location"><%- locals.prod.location %> </span></p>
+            <p>Kilometers from the center: <span class="km"><%- locals.prod.km %> </span></p>
+
+
+            <%d=prod.add_time
+            var month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+            var name = month[d.getMonth()-1];
+            %>
+            <p>Add date: <span class="data"><time datetime="<%d%>"><%- d.getDay()%>/<%-name%>/<%-d.getFullYear()%>(<%-d.toLocaleString('default', {weekday: 'long'})%>)</time></span></p>
+
+
+            <figure class="imag-produs">
+                <img  src="/resurse/imagini/hotels/<%- locals.prod.image %>" alt="[imagine <%- locals.prod.name %>]" />
+            </figure>
+        </article>
+
+    </section>
+</main>
+
+<%- include("../fragmente/footer") %>
+</body>
+</html>

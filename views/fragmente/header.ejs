@@ -1,0 +1,116 @@
+<script src="/resurse/js/tema.js"></script>
+
+<header id="header">
+    <div id="h1">
+        <h1 id="top">Travel with WanderWorld<img id="logo" src="/resurse/ico/fav_bun.png" alt="imagine" title="Logo" width="100" height="100"> </h1>
+
+    </div>
+
+</header>
+
+<nav id="animate_menu">
+    <p id="watermark"></p>
+
+    <label id="hamburger" for="ch-menu">
+        <div id="bars" class="fa-solid fa-bars"></div>
+    </label>
+
+    <input id="ch-menu" type="checkbox">
+
+    <ul class="meniu">
+      <li id="home_link"><div><i  class="fa-solid fa-house"></i><span id="home"> Home</span> <div id="home_icon"></div> </div> <!--nu folosim link pentru submeniu ci intr un div -->
+            <ul id="home_links">
+                <li><a href="/index" style="text-decoration:none">Main page</a></li>
+                <li><a href="/index#popular" style="text-decoration:none">Popular places</a></li>
+                <li><a href="/index#best" style="text-decoration:none">Best offers</a></li>
+                <li><a href="/index#us" style="text-decoration:none">More about us</a></li>
+                <li><a href="/index#feedback" style="text-decoration:none">Impressions</a></li>
+                <li><a href="/index#contact" style="text-decoration:none">Contact us</a></li>
+            </ul>
+        </li>
+
+        <li id="link_flight"><a href="/flights" style="text-decoration:none">Find your flight</a> </li>
+<!--        <li id="link_accomodation"><a href="/accomodation" style="text-decoration:none">Accomodation</a></li>-->
+<!--        <li id="link_logging"><a href="/logging" style="text-decoration:none">SignUp</a></li>-->
+        <li id="ingregistrare"><a href="/inregistrare" style="text-decoration:none">Sign in</a></li>
+
+        <!--adaugam buacat de meniu pt admin daca are dreptul de admin
+        ?. returneaza fals daca nu exista proprietatea din dreapta lui -->
+        <!--chestia asta e <=> cu locals.utilizator && locals.utilizator.areDreptul && locals?.utilizator.areDreptul.(Drepturi.vizualizareUtilizatori) -->
+
+        <li><a href="/cos-virtual">Cos virtual</a></li>
+
+        <% if(locals?.utilizator?.areDreptul?.(Drepturi.vizualizareUtilizatori)) { %>
+            <li id="admin"><div>Administrare</div>
+                <ul>
+                    <li><a href="/useri">Useri</a></li>
+                    <li><a href="/grafice">Grafice</a></li>
+                    <li><a href="/comenzi">Comenzi</a></li>
+                </ul>
+            </li>
+        <% } %>
+        <% if(locals.utilizator) { %>
+            <li id="user"><div><%- locals.utilizator.username %></div>
+                <ul>
+                    <li><a href="/profil">Profil</a></li>
+                    <li>
+                        <a href="/logout">Logout
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
+                                <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li id="chat"><a href="/chat" style="text-decoration:none">Chat</a></li>
+
+        <% } %>
+
+
+
+        <li id="products"><div><span id="home"> Products</span> <div id="home_icon"></div> </div> <!--nu folosim link pentru submeniu ci intr un div -->
+            <ul id="products">
+                <li><a href="/hotels" style="text-decoration:none">All accomodation types</a></li>
+<!--                <li><a href="/hotels?tip=villa" style="text-decoration:none">Villas</a></li>-->
+<!--                <li><a href="/hotels?tip=hotel" style="text-decoration:none">Hotels</a></li>-->
+<!--                <li><a href="/hotels?tip=house" style="text-decoration:none">Houses</a></li>-->
+<!--                <li><a href="/hotels?tip=apartment" style="text-decoration:none">Apartments</a></li>-->
+                <% for (let opt of locals.optiuniMeniu) { %>
+                    <li><a href="/hotels?tip=<%- opt.unnest %>" style="text-decoration:none"><%- opt.unnest.charAt(0).toUpperCase()+ opt.unnest.slice(1) %></a></li>
+                <% } %>
+
+
+            </ul>
+        </li>
+
+
+        <span class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="theme_button" >
+
+                <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-sun-fill" viewBox="0 0 16 16">
+                    <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+                </svg>
+
+             <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon-fill" viewBox="0 0 16 16">
+                    <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+                </svg>
+
+            </span>
+
+    </ul>
+
+
+    <!--            <script>-->
+    <!--                function myFunction() {-->
+    <!--                    var x = document.getElementById("home_link");-->
+    <!--                    if (x.style.display === "block") {-->
+    <!--                        x.style.display = "none";-->
+    <!--                    } else {-->
+    <!--                        x.style.display = "block";-->
+    <!--                    }-->
+    <!--                }-->
+    <!--            </script>-->
+
+</nav>

@@ -1,0 +1,35 @@
+<div id="grid-galerie">
+    <%
+    d=new Date("April 20, 2023 12:59:50");
+    d.getHours();
+
+    var imagini_bune=[]
+
+    for(let img of locals.imagini) {
+        if (img.timp && (5 <= d.getHours() && d.getHours() <= 12 && img.timp.includes("dimineata"))
+                || (12 < d.getHours() && d.getHours() <= 20 && img.timp.includes("zi")) ||
+                ((20 < d.getHours() || d.getHours() < 5) && img.timp.includes("noapte")) )
+            imagini_bune.push(img)
+
+    }
+
+    if(imagini_bune.length>6 && imagini_bune.length%3!=0) {
+        let rest=imagini_bune.length%3;
+        imagini_bune.length=imagini_bune.length-rest;
+    }
+
+            for(let imag of imagini_bune) {
+    %>
+
+        <figure id="galerie_statica">
+            <picture>
+                <source  media="(max-width:1000px)" srcset="<%- imag.fisier_mediu %>" />
+                <img src="<%- imag.cale_relativa %>" alt="<%- imag.nume %>>">
+            </picture>
+            <figcaption><%- imag.descriere %></figcaption>
+        </figure>
+
+    <% }  %>
+
+</div>
+
