@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>WANDERWORLD</title>
+    <meta charset="UTF-8"><!-- codificarea în memorie a caracterelor-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="flight, booking, hotel, restaurant, price, holiday, vacation, ticket, city, country, tour, tour guide, museum,destination">
+    <meta name="description" content="Wanderworld will help you plan your dream holiday offering a wide range of options for your flight, hotel or just a tourist guide for main landmarks around the world"><!-- descrierea paginii, adesea apare sub link când sunt afișate rezultatele căutării -->
+    <meta name="author" content="Smaranda Andronic">
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="./resurse/ico/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./resurse/ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./resurse/ico/favicon-16x16.png">
+    <link rel="manifest" href="./resurse/ico/site.webmanifest">
+    <link rel="shortcut icon" href="./resurse/ico/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="./resurse/ico/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="./nav.css" type="text/css">
+    <link rel="stylesheet" href="./nav1000.css" type="text/css"   media="screen and (max-width: 1000px)">
+    <link rel="stylesheet" href="./nav700.css" type="text/css"   media="screen and (max-width: 700px)">
+    <link rel="stylesheet" href="./style.css" type="text/css" >
+    <link rel="stylesheet" href="./print.css" type="text/css" media="print">
+    <link rel="stylesheet" href="./style.css" type="text/css" media="screen and (min-width: 1001px)">
+    <link rel="stylesheet" href="./style1000.css" type="text/css" media="screen and (max-width: 1000px)">
+    <link rel="stylesheet" href="./style700.css" type="text/css"  media="screen and (max-width: 700px)" >
+    <!-- <link rel="stylesheet" href="./reset.css" type="text/css" >-->
+
+
+
+    <script src="https://kit.fontawesome.com/6635304fb0.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+<header id="header">
+    <div id="h1">
+        <h1 id="top">Travel with WanderWorld<img id="logo" src="./resurse/ico/fav_bun.png" alt="imagine" title="Logo" width="100" height="100"> </h1>
+    </div>
+
+</header>
+
+<nav id="animate_menu">
+    <p id="watermark"></p>
+
+    <label id="hamburger" for="ch-menu">
+        <div id="bars" class="fa-solid fa-bars"></div>
+    </label>
+
+    <input id="ch-menu" type="checkbox">
+
+    <ul class="meniu">
+        <!--                <li id="hamburger_menu"><a href="javascript:void(0);" class="icon" onclick="myFunction()">-->
+        <!--                    <i class="fa-solid fa-bars"></i></a></li>-->
+        <li id="home_link"><div><i  class="fa-solid fa-house"></i><span id="home"> Home</span> <div id="home_icon"></div> </div> <!--nu folosim link pentru submeniu ci intr un div -->
+            <ul id="home_links">
+                <li><a href="#popular" style="text-decoration:none">Popular places</a></li>
+                <li><a href="#best" style="text-decoration:none">Best offers</a></li>
+                <li><a href="#us" style="text-decoration:none">More about us</a></li>
+                <li><a href="#feedback" style="text-decoration:none">Impressions</a></li>
+                <li><a href="#contact" style="text-decoration:none">Contact us</a></li>
+            </ul>
+        </li>
+
+        <li id="link_flight"><a href="#flight" style="text-decoration:none">Find your flight</a> </li>
+        <li id="link_accomodation"><a href="#accomodation" style="text-decoration:none">Accomodation</a></li>
+        <li id="link_guide"><a href="#guide" style="text-decoration:none">Travel guide</a></li>
+        <li id="link_logging"><a href="#logging" style="text-decoration:none">SignUp</a></li>
+    </ul>
+
+
+    <!--            <script>-->
+    <!--                function myFunction() {-->
+    <!--                    var x = document.getElementById("home_link");-->
+    <!--                    if (x.style.display === "block") {-->
+    <!--                        x.style.display = "none";-->
+    <!--                    } else {-->
+    <!--                        x.style.display = "block";-->
+    <!--                    }-->
+    <!--                }-->
+    <!--            </script>-->
+
+</nav>
+
+<main>
+    <div id="grid_page">
+        <section id="presentation">
+            <h2 id="popular"><b> Explore the most popular destinations</b></h2>
+            <figure>
+                <picture id="popular_img">
+                    <source media="(max-width: 600px)" srcset="./resurse/imagini/dubai_small.jpg">
+                    <source media="(max-width: 1000px)" srcset="./resurse/imagini/dubai_half.jpg">
+                    <source media="(max-width: 2000px)" srcset="./resurse/imagini/Dubai.jpg">
+                    <img src="./resurse/imagini/Dubai.jpg" alt="imagine" title="Dubai">
+                </picture>
+                <figcaption><span style="font-weight: bold;">Dubai is our <i>#1</i> destination</span></figcaption>
+            </figure>
+
+            <p><b>Don't forget to check out </b><a href="https://open.spotify.com/show/1cr36qpV0I4r1LZCS2DCb8?si=a_e_Xj1tSvy-e4X_vnBUvQ&nd=1" target="_blank">these stories</a> told by a real adventurer if you want to find out more unique places and fascinating experiences
+            </p> <!--tagul p nu permite taguri de tip block in interior; nu poti sa pui figure, h, etc in interiorului unui paragaf -> solutie: inchidem tagul inainte de figure si il deschidem dupa-->
+
+            <section id="near">
+                <h3>Near you</h3>
+
+                <p style="font-weight:bold;">You shouldn't miss trying these experiences <span><i class="fa-solid fa-arrow-down fa-flip"></i></span>
+                </p>
+
+
+
+
+                <ol>
+                    <li>Palace of the Parliament<br>
+                        <img id="palace" src="./resurse/imagini/peoples-house-g04332db42_640.jpg" alt="image" title="peoplesHouse">
+                    </li>
+                    <li>Nicolae Ceausescu's residence<br>
+                        <img id="ceausescu" src="./resurse/imagini/Casa-Ceausescu-Primaverii.jpg" alt="image" title="ceausescu">
+                    </li>
+                    <li>National Art Museum<br>
+                        <img id="museum" src="./resurse/imagini/muzeul_national.jpg" alt="image" title="museum">
+                    </li>
+                </ol>
+            </section>
+
+            <section>
+                <h3>Today's photo</h3>
+                <p><!--For more travel ideas check out these stories from trip addicts-->Every day we prepare you a <a href="./resurse/imagini/phuket-thailand-beach.jpeg" download="surprise.jpeg"> secret surpise photo</a> from an exotic location for you to inspire from </p>
+            </section>
+
+        </section>
+
+
+        <div id="data_stats">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+
+
+        <div id="users">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+
+
+        <div id="site_server">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+
+
+        <div id="calendar">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+
+
+        <div id="ad">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+
+
+        <section  id="table">
+            <h2 id="best">Best offers</h2>
+            <p>Here I will insert a slide show of photos representing images from places which have the cheapest offers</p>
+            <!--Adaug link catre mai multe povesti de pe bloguri si sa se descarce in bloc-->
+
+            <h3>Best low-cost cities based on countries</h3>
+            <div id="container_table">
+                <table>
+                    <caption id="caption_table">Cities of the year 2023</caption>
+
+                    <thead>
+                    <tr>
+                        <th>Italy</th>
+                        <th>Czech Republic</th>
+                        <th>Greece</th>
+                        <th>Poland</th>
+                        <th>Average Price / Day</th>
+
+                    </tr>
+                    </thead>
+
+                    <tbody>
+
+                    <tr>
+                        <td>Bologna</td>
+                        <td>Prague</td>
+                        <td>Rhodos</td>
+                        <td>Warsaw</td>
+                        <td id="avg_price" rowspan="3">$50</td>
+
+                    </tr>
+
+                    <tr>
+                        <td>Padova</td>
+                        <td>Český Krumlov</td>
+                        <td>Creta</td>
+                        <td>Krakow</td>
+                    </tr>
+
+                    <tr>
+                        <td>Bari</td>
+                        <td>Karlovy Fluctuate</td>
+                        <td>Thessaloniki</td>
+                        <td>Gdansk</td>
+                    </tr>
+
+                    </tbody>
+
+                    <tfoot>
+                    <tr>
+                        <td>Piedmont</td>
+                        <td>Brno</td>
+                        <td>Corfu</td>
+                        <td>Wroclaw</td>
+                        <td id="last_column"></td>
+                    </tr>
+                    </tfoot>
+
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <div id="other">
+            <section id="us">
+                <h2>More about us</h2>
+                <ul>
+                    <li>More than <s>5000</s> <ins style="text-decoration: none;"><b> 10000</b> </ins>people opt for our services</li>
+                    <li>We give trustworthy holiday solutions since 2010</li>
+                </ul>
+
+                <div id="container_iframe">
+                    <div id="video_iframe">
+                        <iframe id="iframe" name="ifr-video"  src="https://www.youtube.com/embed/Xj4E0Zry6K4"
+                                title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen></iframe>
+                    </div>
+
+                    <div class="iframe_links">
+                        <a  href="https://www.youtube.com/embed/Xj4E0Zry6K4" target="ifr-video" style="text-decoration:none">Your dreams, our goals</a>
+                        <a  href="https://www.youtube.com/embed/k4mumEYdz0s" target="ifr-video" style="text-decoration:none">By your side, around the world</a>
+                        <br>
+
+                    </div>
+                </div>
+
+            </section>
+
+            <div id="feedback">
+                <article>
+                    <h3>Impressions from our clients : </h3>
+                    <div id="extern-font">
+                        <q>I'm very glad I opted for WanderWorld's services  &#128512; </q> <br>
+                        <q>With the help of WanderWorld I could plan my whole vacation from scratch in just one place &#128513;</q>
+                        <p>Reputable sites mentioning us : </p>
+                        <blockquote cite="https://fmi.unibuc.ro/">
+                            From hotels to travel guides, flights, various impressions and pieces of advice <abbr title="etcetera">etc</abbr>. With WanderWorld say <i>au revoir</i> to monotony and hello to your desired lifestyle!
+                        </blockquote>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div> <!--inchide div grid-pagina-->
+
+
+</main>
+
+<footer>
+    <br>
+    <div id="contact">
+        <address>
+            <a id="mail" href="mailto:andronicsmaranda05@gmail.com">Email us  <i class="fa-solid fa-envelope"></i></a><br>
+            <a id="tel" href="tel:+40745611210">Call us  <i class="fa-solid fa-phone"></i> </a><br>
+            <a id="map" href="https://www.google.com/maps/dir//Facultatea+de+Matematic%C4%83+%C8%99i+Informatic%C4%83+Strada+Academiei+14+Bucure%C8%99ti+010014/@44.4355355,26.0995867,16z/data=!4m8!4m7!1m0!1m5!1m1!1s0x40b1ff472f47f047:0x493984726f0235f9!2m2!1d26.0995867!2d44.4355355">Find us here <i class="fa-sharp fa-solid fa-location-dot"></i></a><br>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2848.884300753012!2d26.097392650492484!3d44.43553547899959!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b1ff472f47f047%3A0x493984726f0235f9!2sFacultatea%20de%20Matematic%C4%83%20%C8%99i%20Informatic%C4%83!5e0!3m2!1sro!2sro!4v1677860076640!5m2!1sro!2sro" width="600" height="450" style="border:0;"
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+
+            </iframe>
+        </address>
+
+
+        <a aria-label="Chat on WhatsApp" href="https://wa.me/+40745611210">
+            <img alt="Chat on WhatsApp" src="./resurse/ChatOnWhatsAppButton/WhiteTheme/WhatsAppButtonWhiteSmall.png" width="150" height="40">
+        </a>
+
+        <details>
+            <summary>Our partners</summary>
+            <dl>
+                <dt>Sites </dt>
+                <dd>Booking.com</dd>
+                <dt>Hotel chains</dt>
+                <dd>Hilton Worldwide</dd>
+                <dt>Restaurants</dt>
+                <dd>Burger King</dd>
+                <dd>Five Guys</dd>
+            </dl>
+
+
+        </details>
+
+        <div id="top_link" class="tooltip" >
+            <a href="#top" title="Go to the top"> <div class="triangle"></div></a>
+            <!--<span class="tooltip_text">Go to top</span>-->
+        </div>
+
+        <small>WanderWorld &reg;</small>
+        <br>
+        <small>Copyright &copy; <time datetime="2023-03-01">1 March 2023</time></small>
+    </div>
+    <p id="banner"><b>Disclaimer! This is a school project</b></p>
+</footer>
+
+
+</body>
+</html>
+
+
+
+<!--https://faq.whatsapp.com/5913398998672934/?helpref=hc_fnav&locale=en_US
+https://developers.google.com/maps/documentation/javascript/adding-a-google-map
+-->
