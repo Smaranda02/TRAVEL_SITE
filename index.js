@@ -1074,7 +1074,7 @@ function afisareEroare(res,_identificator, _titlu="titlu default", _text,_imagin
 }
 
 
-app.listen(8000);
+app.listen(8001);
 
 console.log("Server ON");
 
