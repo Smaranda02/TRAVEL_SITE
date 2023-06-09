@@ -3,5 +3,6 @@
 /workspace.xml
 /node_modules
 /temp
+/resurse/videos
 # Editor-based HTTP Client requests
 /httpRequests/
