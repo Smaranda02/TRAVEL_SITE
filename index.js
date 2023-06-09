@@ -107,13 +107,23 @@ AccesBD.getInstanta().select({  //ne ajutam de query builderul din accesbd.js
 
 const {Client} = require('pg');
 
+//
+// var client= new Client({database:"ProiectWBBD",
+//     user:"postgres",
+//     password:"admin2002",
+//     host:"localhost",
+//     port:5432});
+// client.connect();
 
-var client= new Client({database:"ProiectWBBD",
-    user:"postgres",
-    password:"admin2002",
-    host:"localhost",
-    port:5432});
-client.connect();
+
+
+const client = new Client({
+    connectionString: process.env.DATABASE_URL,
+    ssl: {
+        rejectUnauthorized: false
+    }
+});
+
 
 // client.query("select * from prajituri", function(err, rez){
 //     console.log("Eroare BD",err);
