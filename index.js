@@ -133,7 +133,7 @@ obGlobal={
     optiuniMeniu: [],
     optiuniFood: [],
     protocol:"http://",
-    numeDomeniu:"localhost:8000",
+    numeDomeniu:"localhost:8001",
     clientMongo:mongodb.MongoClient,
     bdMongo:null,
     minPrice:[],
